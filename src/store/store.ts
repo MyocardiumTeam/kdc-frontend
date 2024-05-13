@@ -1,18 +1,19 @@
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
 import { mokeSlice } from './reducer';
+import { apiSlice } from './api';
 
 export const listenerMiddleware = createListenerMiddleware();
 
 export const setupStore = () => {
   return configureStore({
-    reducer: { moke: mokeSlice.reducer },
+    reducer: { moke: mokeSlice.reducer, api: apiSlice.reducer },
     middleware: (getDefaultMiddleware) =>
       getDefaultMiddleware({
         serializableCheck: false,
       })
         .prepend(listenerMiddleware.middleware)
-        .concat(),
+        .concat(apiSlice.middleware),
   });
 };
 export const store = setupStore();
