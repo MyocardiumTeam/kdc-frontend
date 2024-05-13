@@ -1,0 +1,15 @@
+.Footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: rem(35px);
+  padding-bottom: rem(35px);
+
+  background-color: #fff;
+
+  &__Note {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: rem(24px);
+  }
+}
