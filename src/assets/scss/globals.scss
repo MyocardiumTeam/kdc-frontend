@@ -21,7 +21,7 @@ body {
   max-width: 100vw;
   font-family: $font-Proxima;
   overflow-x: hidden;
-  background-color: $color-default-background;
+  background-color: $color-bacground-default;
   color: $color-white-default;
 }
 
@@ -29,4 +29,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+button {
+  cursor: pointer;
 }

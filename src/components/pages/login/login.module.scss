@@ -1,0 +1,59 @@
+.Login {
+  width: rem(976px);
+  height: rem(574px);
+
+  background: $color-white-default;
+  box-shadow:
+    0px 178px 71px rgba(0, 0, 0, 0.01),
+    0px 100px 60px rgba(0, 0, 0, 0.05),
+    0px 44px 44px rgba(0, 0, 0, 0.09),
+    0px 11px 24px rgba(0, 0, 0, 0.1);
+  border-radius: rem(20px);
+
+  &__Title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: rem(48px);
+    line-height: rem(58px);
+    text-align: center;
+
+    color: #000000;
+  }
+}
+
+.Form {
+  &__TitleInput {
+    font-style: normal;
+    font-weight: 300;
+    font-size: rem(24px);
+    line-height: rem(29px);
+
+    color: #000000;
+  }
+
+  &__Input {
+    box-sizing: border-box;
+
+    width: rem(411.6px);
+    height: rem(43.96px);
+
+    padding: rem(8px) rem(17px);
+
+    background: rgba(217, 217, 217, 0.01);
+    border: rem(2px) solid #d9d9d9;
+    border-radius: rem(10px);
+
+    font-size: rem(20px);
+    line-height: rem(24px);
+
+    color: rgba(0, 0, 0, 0.8);
+  }
+
+  &__Button {
+    width: rem(410px);
+    height: rem(65px);
+
+    background: #6928df;
+    border-radius: rem(10px);
+  }
+}

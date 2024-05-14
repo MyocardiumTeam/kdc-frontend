@@ -14,6 +14,7 @@ const baseQueryWithReauth = async (
   extraOptions: object,
 ) => {
   const result = await baseQuery(args, api, extraOptions);
+  console.log(result);
   return result;
 };
 

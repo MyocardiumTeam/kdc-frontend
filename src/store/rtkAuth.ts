@@ -2,19 +2,19 @@ import { apiSlice } from './api';
 
 const RtkAuth = apiSlice.injectEndpoints({
   endpoints: (build) => ({
-    consultationForm: build.mutation<any, AdminLoginRequest>({
+    authUser: build.mutation<any, AdminLoginRequest>({
       query: (body) => ({
         url: 'api/v1/web_specified/login',
         method: 'POST',
-        body: { body },
+        body,
       }),
     }),
   }),
 });
 
-export const { useConsultationFormMutation } = RtkAuth;
+export const { useAuthUserMutation } = RtkAuth;
 
-type AdminLoginRequest = {
+interface AdminLoginRequest {
   snils: string;
   userPassword: string;
-};
+}
