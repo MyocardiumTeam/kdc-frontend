@@ -1,9 +1,49 @@
 import { Icon } from '@base/index';
 import styles from './home.module.scss';
 import React from 'react';
+import TableRow, { PropsCell } from './ex';
 
 const Home = () => {
-  const columnsName = ['Баллы', 'Пациент', 'Дата рождения', 'Пол', ' '];
+  const columnsName = ['Баллы', 'Пациент', 'Дата рождения', 'Пол', 'Button'];
+
+  const patients: PropsCell[] = [
+    {
+      data: {
+        ball: '10.0',
+        Name: 'Ivanov ivan ivanovich',
+        Birth: '19.23.2043',
+        Floor: 'Man',
+        id: '123',
+      },
+    },
+    {
+      data: {
+        ball: '10.0',
+        Name: 'Ivanov ivan ivanovich',
+        Birth: '19.23.2043',
+        Floor: 'Man',
+        id: '123',
+      },
+    },
+    {
+      data: {
+        ball: '10.0',
+        Name: 'Ivanov ivan ivanovich',
+        Birth: '19.23.2043',
+        Floor: 'Man',
+        id: '123',
+      },
+    },
+    {
+      data: {
+        ball: '10.0',
+        Name: 'Ivanov ivan ivanovich',
+        Birth: '19.23.2043',
+        Floor: 'Man',
+        id: '123',
+      },
+    },
+  ];
 
   const rows = [
     { type: 'second' },
@@ -11,11 +51,10 @@ const Home = () => {
     { type: 'second' },
     { type: 'third' },
     { type: 'second' },
-    // Я не ебу пока что как правильно это сделать в зависимости от кнопки сортировки, потому что я её не сделал хихи
   ];
 
   return (
-    <main className={styles.Home}>
+    <div className={styles.Home}>
       <h1 className={styles.Home__Title}>Пациенты </h1>
       <div className={styles.SearchArea}>
         <div className={styles.SearchBarView}>
@@ -27,33 +66,31 @@ const Home = () => {
           <button className={styles.SortButton}></button>
         </div>
       </div>
-      <div className={styles.Table}>
-        <div className={styles.FirstTableStroke}>
+
+      <ul>
+        <ul className={styles.TittleColumn}>
           {columnsName.map((column, index) => (
-            <React.Fragment key={index}>
-              <div className={styles.Column}>
-                <span className={styles.ColumnName}>{column}</span>
-              </div>
-              {index !== columnsName.length - 1 && <div className={styles.Separator}></div>}
-            </React.Fragment>
+            <li key={index} className={styles.TittleColumn__Element}>
+              <span style={{ color: 'black' }}>{column}</span>
+            </li>
           ))}
-        </div>
-        {rows.map((row, rowIndex) => (
-          <div
-            key={rowIndex}
-            className={rowIndex % 2 === 0 ? styles.SecondTableStroke : styles.ThirdTableStroke}
-          >
-            {/* Здесь разместите содержимое каждой строки */}
-            {columnsName.map((column, colIndex) => (
-              <React.Fragment key={colIndex}>
-                <div className={styles.Column}>{/* Содержимое столбца */}</div>
-                {colIndex !== columnsName.length - 1 && <div className={styles.Separator}></div>}
-              </React.Fragment>
-            ))}
-          </div>
-        ))}
-      </div>
-    </main>
+        </ul>
+        <ul className={styles.TittleColumn}>
+          {patients.map((patient, index) => (
+            <TableRow
+              data={{
+                ball: '10.0',
+                Name: 'Ivanov ivan ivanovich',
+                Birth: '19.23.2043',
+                Floor: 'Man',
+                id: '123',
+              }}
+              key={index}
+            />
+          ))}
+        </ul>
+      </ul>
+    </div>
   );
 };
 export default Home;

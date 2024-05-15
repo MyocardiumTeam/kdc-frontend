@@ -131,3 +131,19 @@
   height: rem(60px);
   background-color: $color-white-default;
 }
+
+.TittleColumn {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  background-color: rgba(0, 0, 0, 0.05);
+
+  border-radius: 20px 20px 0 0;
+
+  &__Element {
+    border-right: 1px solid black;
+
+    &:last-child {
+      border: none;
+    }
+  }
+}
