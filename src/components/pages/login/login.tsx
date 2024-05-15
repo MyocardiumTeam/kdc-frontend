@@ -44,8 +44,8 @@ const Login = () => {
         <input {...register('snils')} className={s.Form__Input} />
         <p className={s.Form__TitleInput}>Пароль</p>
         <input {...register('userPassword')} className={s.Form__Input} />
-        <button className={s.Form__Button}>Вход</button>
       </form>
+      <button className={s.Form__Button}>Вход</button>
     </main>
   );
 };

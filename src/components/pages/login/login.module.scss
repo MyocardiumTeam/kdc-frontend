@@ -9,6 +9,9 @@
     0px 44px 44px rgba(0, 0, 0, 0.09),
     0px 11px 24px rgba(0, 0, 0, 0.1);
   border-radius: rem(20px);
+  align-items: center;
+  flex-direction: column;
+  display: flex;
 
   &__Title {
     font-style: normal;
@@ -16,29 +19,29 @@
     font-size: rem(48px);
     line-height: rem(58px);
     text-align: center;
-
-    color: #000000;
+    color: $color-black-default;
+    margin-top: rem(60px);
   }
 }
 
 .Form {
+  margin-top: rem(49px);
+
   &__TitleInput {
     font-style: normal;
     font-weight: 300;
     font-size: rem(24px);
     line-height: rem(29px);
-
-    color: #000000;
+    color: $color-black-default;
+    margin-bottom: rem(12px);
   }
 
   &__Input {
     box-sizing: border-box;
-
     width: rem(411.6px);
     height: rem(43.96px);
-
     padding: rem(8px) rem(17px);
-
+    margin-bottom: rem(14px);
     background: rgba(217, 217, 217, 0.01);
     border: rem(2px) solid #d9d9d9;
     border-radius: rem(10px);
@@ -52,7 +55,8 @@
   &__Button {
     width: rem(410px);
     height: rem(65px);
-
+    margin-top: rem(46px);
+    margin-bottom: rem(60px);
     background: #6928df;
     border-radius: rem(10px);
   }
