@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { GetPatientsParamsType } from '../../../store/data-slices';
 
-export const columnsName = ['Баллы', 'Пациент', 'Дата рождения', 'Пол', 'Button'];
+export const columnsName = ['Баллы', 'Пациент', 'Дата рождения', 'Пол'];
 
 const usePatientsData = () => {
   const [patientsData, setPatientsData] = useState<GetPatientsParamsType>({

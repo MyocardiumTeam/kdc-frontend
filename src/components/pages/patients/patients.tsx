@@ -46,7 +46,8 @@ const Patients = () => {
       </ul>
       {data &&
         data.map((patient, index) => (
-          <ul
+          <Link
+            href={`/poll-list/${patient.userId}`}
             className={clsx(s.Table, {
               [s.Table__PurpleCell]: index % 2 === 0,
               [s.Table__Element__Last]: index + 1 === data?.length,
@@ -60,17 +61,18 @@ const Patients = () => {
               <span style={{ color: 'black' }}>{patient.firstName}</span>
             </li>
             <li key="birth" className={s.Table__Element}>
-              <span style={{ color: 'black' }}>{patient.userBirthDate}</span>
+              <span style={{ color: 'black' }}>
+                {new Date(patient.userBirthDate).toLocaleString('default', {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                })}
+              </span>
             </li>
             <li key="floor" className={s.Table__Element}>
               <span style={{ color: 'black' }}>{patient.userGender}</span>
             </li>
-            <li key="id" className={clsx(s.Table__Element)}>
-              <Link style={{ color: 'black' }} href={`/poll-list/${patient.userId}`}>
-                {patient.userId}
-              </Link>
-            </li>
-          </ul>
+          </Link>
         ))}
     </div>
   );
