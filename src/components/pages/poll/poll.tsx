@@ -4,15 +4,18 @@ import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { useLazyGetPollInfoQuery } from '../../../store/data-slices';
 
-const PollInfo = ({ params }: { params: { id: string } }) => {
+interface PollInfoProps {
+  id: string;
+}
+
+const PollInfo = ({ id }: PollInfoProps) => {
   const columnsName = ['Вопрос', 'Ответ'];
 
   const [trigger, { data }] = useLazyGetPollInfoQuery();
 
   useEffect(() => {
-    console.log(params);
-    trigger('5');
-  }, []);
+    trigger(id);
+  }, [id]);
 
   const rows = [
     { type: 'second' },

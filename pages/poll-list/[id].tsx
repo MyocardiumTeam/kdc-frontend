@@ -1,11 +1,23 @@
 import { Default } from '@common/index';
 import PollList from '@pages/pollsList/pollsList';
-import type { NextPage } from 'next';
+import type { GetServerSidePropsContext } from 'next';
 
-const PollListPage: NextPage = () => {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const id = context.params?.id;
+
+  if (!id) return { props: {} };
+
+  return {
+    props: {
+      id,
+    },
+  };
+}
+
+const PollListPage = ({ id }: { id: string }) => {
   return (
     <Default>
-      <PollList />
+      <PollList id={id} />
     </Default>
   );
 };

@@ -14,20 +14,18 @@ export type PropsCell = {
   id: string;
 };
 
-const PollList = () => {
+interface PollInfoProps {
+  id: string;
+}
+
+const PollList = ({ id }: PollInfoProps) => {
   const columnsName = ['Тип опроса', 'дата прохождения'];
 
   const [trigger, { data }] = useLazyGetPollsQuery();
 
-  const router = useRouter();
-  const { id } = router.query;
-
   useEffect(() => {
-    console.log(id);
-    if (typeof id === 'string') {
-      trigger(id);
-    }
-  }, []);
+    trigger(id);
+  }, [id]);
 
   const rows = [
     { type: 'second' },
