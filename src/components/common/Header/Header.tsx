@@ -2,10 +2,7 @@ import React from 'react';
 
 import s from './Header.module.scss';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
-import { RouteEnum } from '@constants/route';
 const Header = () => {
-  const { push } = useRouter();
   return (
     <header className={s.Header}>
       <Image
@@ -16,9 +13,6 @@ const Header = () => {
         fetchPriority="high"
         priority
         className={s.Header__Logo}
-        onClick={() => {
-          push(RouteEnum.HOME);
-        }}
       />
     </header>
   );

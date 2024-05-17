@@ -1,12 +1,11 @@
 import { Default } from '@common/index';
-import Home from '@pages/Home/home';
-import { Login } from '@pages/index';
+import Patients from '@pages/patients/patients';
 import type { NextPage } from 'next';
 
 const HomePage: NextPage = () => {
   return (
     <Default>
-      <Home />
+      <Patients />
     </Default>
   );
 };
