@@ -9,13 +9,13 @@ const Header = () => {
   return (
     <header className={s.Header}>
       <Image
+        className={s.Header__Logo}
         src={'/images/Logo.png'}
         alt={'Logo'}
-        width={477}
-        height={100}
+        width={500}
+        height={500}
         fetchPriority="high"
         priority
-        className={s.Header__Logo}
       />
     </header>
   );
