@@ -1,13 +1,7 @@
-import { Default } from '@common/index';
-import Patients from '@pages/patients/patients';
-import type { NextPage } from 'next';
+import { PatientsList } from '@pages/index';
 
-const HomePage: NextPage = () => {
-  return (
-    <Default>
-      <Patients />
-    </Default>
-  );
+const PatientsPage = () => {
+  return <PatientsList />;
 };
 
-export default HomePage;
+export default PatientsPage;

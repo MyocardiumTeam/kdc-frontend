@@ -1,8 +1,8 @@
-import Footer from '@common/Footer/Footer';
-import Header from '@common/Header/Header';
 import React from 'react';
 
 import s from './Default.module.scss';
+import Header from '@common/Header/Header';
+import Footer from '@common/Footer/Footer';
 
 type Props = {
   children: React.ReactNode;

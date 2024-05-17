@@ -6,8 +6,6 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useAuthUserMutation } from '../../../store/rtkAuth';
 
 const Login = () => {
-  const router = useRouter();
-
   const {
     handleSubmit,
     register,
@@ -25,8 +23,6 @@ const Login = () => {
   const handleSignIn = async (data: SignInType) => {
     try {
       const response = await userAuth(data);
-      console.log(response);
-      // reset();
     } catch (e: any) {
       console.error('LOGIN_ERROR: ', e);
     }

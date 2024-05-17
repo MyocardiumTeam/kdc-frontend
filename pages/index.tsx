@@ -1,13 +1,7 @@
-import { Default } from '@common/index';
 import { Login } from '@pages/index';
-import type { NextPage } from 'next';
 
-const HomePage: NextPage = () => {
-  return (
-    <Default>
-      <Login />
-    </Default>
-  );
+const HomePage = () => {
+  return <Login />;
 };
 
 export default HomePage;

@@ -20,4 +20,3 @@ export const store = setupStore();
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppStore = ReturnType<typeof setupStore>;
-export const wrapper = createWrapper<AppStore>(setupStore, { debug: true });

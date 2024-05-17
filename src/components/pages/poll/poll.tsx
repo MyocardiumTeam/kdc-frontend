@@ -1,47 +1,34 @@
 import { Icon } from '@base/index';
-import styles from './poll.module.scss';
+import s from './poll.module.scss';
 import React, { useEffect } from 'react';
 import clsx from 'clsx';
 import { useLazyGetPollInfoQuery } from '../../../store/data-slices';
-
-interface PollInfoProps {
-  id: string;
-}
+import { columnsName, PollInfoProps } from './common';
 
 const PollInfo = ({ id }: PollInfoProps) => {
-  const columnsName = ['Вопрос', 'Ответ'];
-
   const [trigger, { data }] = useLazyGetPollInfoQuery();
 
   useEffect(() => {
     trigger(id);
   }, [id]);
 
-  const rows = [
-    { type: 'second' },
-    { type: 'third' },
-    { type: 'second' },
-    { type: 'third' },
-    { type: 'second' },
-  ];
-
   return (
-    <div className={styles.Home}>
-      <h1 className={styles.Home__Title}>Пациенты </h1>
-      <div className={styles.SearchArea}>
-        <div className={styles.SearchBarView}>
-          <Icon icon={'SEARCHICON'} viewBox="0 0 32 32" className={styles.SearchIcon}></Icon>
-          <input className={styles.SearchBarInput} placeholder="Поиск"></input>
+    <div className={s.Home}>
+      <h1 className={s.Home__Title}>Пациенты </h1>
+      <div className={s.SearchArea}>
+        <div className={s.SearchBarView}>
+          <Icon icon={'SEARCHICON'} viewBox="0 0 32 32" className={s.SearchIcon}></Icon>
+          <input className={s.SearchBarInput} placeholder="Поиск"></input>
         </div>
-        <div className={styles.SortView}>
-          <h3 className={styles.WidgetText}>Показывать</h3>
-          <button className={styles.SortButton}></button>
+        <div className={s.SortView}>
+          <h3 className={s.WidgetText}>Показывать</h3>
+          <button className={s.SortButton}></button>
         </div>
       </div>
 
-      <ul className={clsx(styles.Table, styles.Table__TitleRow)}>
+      <ul className={clsx(s.Table, s.Table__TitleRow)}>
         {columnsName.map((column, index) => (
-          <li key={index} className={styles.Table__Element}>
+          <li key={index} className={s.Table__Element}>
             <span style={{ color: 'black' }}>{column}</span>
           </li>
         ))}
@@ -49,17 +36,17 @@ const PollInfo = ({ id }: PollInfoProps) => {
       {data &&
         data.answers.map(({ answer, question }, index) => (
           <ul
-            className={clsx(styles.Table, {
-              [styles.Table__PurpleCell]: index % 2 === 0,
-              [styles.Table__Element__Last]: index + 1 === data.answers?.length,
+            className={clsx(s.Table, {
+              [s.Table__PurpleCell]: index % 2 === 0,
+              [s.Table__Element__Last]: index + 1 === data.answers?.length,
             })}
             key={`${index}${answer}`}
           >
-            <li key="floor" className={styles.Table__Element}>
+            <li key="floor" className={s.Table__Element}>
               <span style={{ color: 'black' }}>{question}</span>
             </li>
-            <li key="id" className={clsx(styles.Table__Element)}>
-              <a style={{ color: 'black' }}>{answer}</a>
+            <li key="id" className={clsx(s.Table__Element)}>
+              <span style={{ color: 'black' }}>{answer}</span>
             </li>
           </ul>
         ))}

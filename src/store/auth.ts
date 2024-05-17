@@ -24,4 +24,5 @@ export const authSlice = createSlice({
 
 export default authSlice.reducer;
 export const { reducer, actions } = authSlice;
-export const isAuthorized = (user: any) => typeof user !== 'undefined';
+export const isAuthorized = () =>
+  !!(typeof localStorage !== 'undefined' && localStorage.getItem('token'));
