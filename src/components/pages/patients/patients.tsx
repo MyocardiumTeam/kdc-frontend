@@ -58,7 +58,9 @@ const Patients = () => {
               <span style={{ color: 'black' }}>9.8</span>
             </li>
             <li key="name" className={s.Table__Element}>
-              <span style={{ color: 'black' }}>{patient.firstName}</span>
+              <span style={{ color: 'black' }}>
+                {patient.firstName} {patient.lastName} {patient.patronymic}
+              </span>
             </li>
             <li key="birth" className={s.Table__Element}>
               <span style={{ color: 'black' }}>
