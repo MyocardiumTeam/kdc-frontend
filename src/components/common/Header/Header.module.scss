@@ -1,12 +1,19 @@
 .Header {
   width: 100%;
+
   display: flex;
   justify-content: space-between;
+
   padding: rem(28px) rem(20px);
+
   background-color: $color-white-default;
+
+  border-bottom: rem(2px) solid rgba(0, 0, 0, 0.2);
+
   @include iftablet {
     padding: rem(16px) rem(145px);
   }
+
   @include iflaptop {
     padding: rem(16px) rem(60px);
   }
@@ -15,10 +22,12 @@
     cursor: pointer;
     width: rem(319px);
     height: rem(66px);
+
     @include iftablet {
       width: rem(477px);
       height: rem(100px);
     }
+
     @include iflaptop {
       width: rem(497px);
     }

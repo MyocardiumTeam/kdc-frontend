@@ -10,7 +10,7 @@ const PollInfo = ({ id }: PollInfoProps) => {
 
   useEffect(() => {
     trigger(id);
-  }, [id]);
+  }, [id, trigger]);
 
   return (
     <div className={s.Home}>

@@ -1,36 +1,38 @@
 .Login {
   width: rem(360px);
   height: rem(575px);
+
   @include iftablet {
     width: rem(768px);
   }
+
   @include iflaptop {
     width: rem(912px);
   }
-  @include ifdesktop {
-    width: rem(905px);
-  }
+
   background: $color-white-default;
+
   box-shadow:
     0px 178px 71px rgba(0, 0, 0, 0.01),
     0px 100px 60px rgba(0, 0, 0, 0.05),
     0px 44px 44px rgba(0, 0, 0, 0.09),
     0px 11px 24px rgba(0, 0, 0, 0.1);
+
   border-radius: rem(20px);
+
+  display: flex;
   align-items: center;
   flex-direction: column;
-  display: flex;
 
   &__Title {
-    font-weight: 600;
+    font-weight: 500;
     font-size: rem(32px);
     line-height: rem(38px);
-    margin-top: rem(79px);
     color: $color-black-default;
-    font-style: normal;
-    text-align: center;
+
+    margin-top: rem(79px);
+
     @include iftablet {
-      font-weight: 500;
       font-size: rem(48px);
       line-height: rem(58px);
       margin-top: rem(53px);
@@ -46,54 +48,68 @@
 
 .Form {
   margin-top: rem(49px);
+
   width: rem(295px);
   height: rem(176px);
+
   @include iftablet {
     width: rem(425px);
     height: rem(182px);
   }
+
   @include iflaptop {
     width: rem(410px);
     height: rem(176px);
   }
+
   @include ifdesktop {
     width: rem(400px);
     height: rem(171px);
   }
+
   &__TitleInput {
     font-style: normal;
     font-weight: 300;
     font-size: rem(24px);
     line-height: rem(29px);
     color: $color-black-default;
+
     margin-bottom: rem(12px);
   }
 
   &__Input {
     box-sizing: border-box;
+
     width: rem(295px);
     height: rem(44px);
+
     background: rgba(217, 217, 217, 0.01);
+
     border: rem(2px) solid #d9d9d9;
     border-radius: rem(10px);
+
     font-size: rem(20px);
     line-height: rem(24px);
     color: rgba(0, 0, 0, 0.8);
+
     @include iftablet {
       width: rem(425px);
       height: rem(45.61px);
+
       padding: rem(12px) rem(16px);
       margin-bottom: rem(11px);
     }
     @include iflaptop {
       width: rem(410px);
       height: rem(44px);
+
       padding: rem(12px) rem(12px);
       margin-bottom: rem(10px);
     }
     @include ifdesktop {
       width: rem(400px);
       height: rem(42.93px);
+
       margin-bottom: rem(8.8px);
     }
   }
@@ -101,24 +117,32 @@
   &__Button {
     width: rem(295px);
     height: rem(65px);
+
     margin-top: rem(49px);
     margin-bottom: rem(79px);
+
     background: #6928df;
+
     border-radius: rem(10px);
+
     @include iftablet {
       width: rem(425px);
       height: rem(67px);
-      margin-top: rem(49px);
-      margin-bottom: rem(53px);
+
+      margin: rem(49px) 0 rem(53px) 0;
     }
+
     @include iflaptop {
       width: rem(410px);
       height: rem(65px);
+
       margin-bottom: rem(60px);
     }
+
     @include ifdesktop {
       width: rem(400px);
       height: rem(63px);
+
       margin-bottom: rem(64.65px);
     }
   }

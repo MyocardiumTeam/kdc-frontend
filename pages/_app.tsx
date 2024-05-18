@@ -8,6 +8,7 @@ import { Default } from '@common/index';
 import { isAuthorized } from '../src/store/auth';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { RouteEnum } from '@constants/route';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const { push } = useRouter();
@@ -15,6 +16,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     if (isAuthorized()) {
       push('/patients');
+    } else {
+      push(RouteEnum.HOME);
     }
   }, []);
 

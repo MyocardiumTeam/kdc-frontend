@@ -6,14 +6,6 @@ import { useLazyGetPatientsQuery } from '../../../store/data-slices';
 import Link from 'next/link';
 import usePatientsData, { columnsName } from './common';
 
-export type PropsCell = {
-  ball: string;
-  Name: string;
-  Birth: string;
-  Floor: string;
-  id: string;
-};
-
 const Patients = () => {
   const [trigger, { data }] = useLazyGetPatientsQuery();
 

@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { defaultValues, SignInType, validationSchema } from './common';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAuthUserMutation } from '../../../store/rtkAuth';
+import { useEffect } from 'react';
 
 const Login = () => {
   const {
@@ -18,7 +19,15 @@ const Login = () => {
     defaultValues,
   });
 
-  const [userAuth] = useAuthUserMutation();
+  const [userAuth, { isSuccess }] = useAuthUserMutation();
+
+  const { push } = useRouter();
+
+  useEffect(() => {
+    if (isSuccess) {
+      push('/patients');
+    }
+  }, [isSuccess]);
 
   const handleSignIn = async (data: SignInType) => {
     try {
