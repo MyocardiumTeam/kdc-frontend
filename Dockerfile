@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY package*.json /usr/src/app/
 RUN npm i --legacy-peer-deps
 RUN npm i -g next
-RUN npm i sass
+RUN npm i sass --legacy-peer-deps
 
 # Copying source files
 COPY . /usr/src/app
