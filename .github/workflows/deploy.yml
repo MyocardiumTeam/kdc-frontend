@@ -9,8 +9,8 @@ jobs:
   prepare-environment:
     runs-on: self-hosted
     steps:
-      - name: cd project directory
-        run: cd /root/kdc-frontend
+      - name: checkout repo
+        uses: actions/checkout@v3
       - name: Stop and remove containers, networks
         run: docker-compose down
       - name: Remove unused data
