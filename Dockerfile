@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 # Installing dependencies
 COPY package*.json /usr/src/app/
 RUN npm i --legacy-peer-deps
+RUN npm i -g next
 
 # Copying source files
 COPY . /usr/src/app
