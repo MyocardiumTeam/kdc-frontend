@@ -14,5 +14,7 @@ COPY . /usr/src/app
 # Building app
 RUN npm run build
 
+RUN next build
+
 # Running the app
 CMD "npm" "run" "start" "--" "-p" "3000"
