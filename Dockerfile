@@ -7,16 +7,12 @@ WORKDIR /usr/src/app
 # Installing dependencies
 COPY package*.json /usr/src/app/
 RUN npm i --legacy-peer-deps
-RUN npm i -g next
-RUN npm i -g sass --legacy-peer-deps
 
 # Copying source files
 COPY . /usr/src/app
 
 # Building app
 RUN npm run build
-
-RUN next build
 
 # Running the app
 CMD "npm" "run" "start" "--" "-p" "3000"
