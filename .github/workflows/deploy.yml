@@ -9,7 +9,7 @@ jobs:
   prepare-environment:
     runs-on: self-hosted
     steps:
-      - name: cd project dir
+      - name: cd project directory
         run: cd /root/kdc-frontend
       - name: Stop and remove containers, networks
         run: docker-compose down
