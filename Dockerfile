@@ -6,13 +6,13 @@ WORKDIR /usr/src/app
 
 # Installing dependencies
 COPY package*.json /usr/src/app/
-RUN npm i --legacy-peer-deps
+RUN yarn
 
 # Copying source files
 COPY . /usr/src/app
 
 # Building app
-RUN npm run build
+RUN yarn build
 
 # Running the app
-CMD "npm" "run" "start" "--" "-p" "3000"
+CMD "yarn" "next"
