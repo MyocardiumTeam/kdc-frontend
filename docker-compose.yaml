@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: front-kdc
+    container_name: front-kdc-2024
     ports:
       - '3500:3000'
     volumes:
