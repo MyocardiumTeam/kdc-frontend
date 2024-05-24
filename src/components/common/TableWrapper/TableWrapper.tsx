@@ -25,7 +25,7 @@ const TableWrapper = ({ children, title, searchValue, limit }: TableWrapperProps
           </button>
         </div>
       </section>
-      <ul>{children}</ul>
+      {children}
     </div>
   );
 };

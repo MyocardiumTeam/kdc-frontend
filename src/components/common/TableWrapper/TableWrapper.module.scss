@@ -41,9 +41,13 @@
 
   padding: 0 rem(12px);
 
+  margin-bottom: rem(31px);
+
   @include iftablet {
     padding: 0 rem(24px);
     gap: rem(45px);
+
+    margin-bottom: rem(45px);
   }
 
   @include iflaptop {
@@ -73,25 +77,37 @@
 .SearchBarView {
   width: rem(175px);
   height: rem(36px);
+
   border-radius: rem(20px);
   border: rem(1px) solid $color-gray-default;
 
   display: flex;
   flex-direction: row;
+  place-items: center;
+  gap: rem(9px);
+
+  padding: rem(10px) rem(16px);
+
   @include iftablet {
     width: rem(375px);
     height: rem(60px);
+
+    padding: rem(14px) rem(16px);
   }
+
   @include iflaptop {
     width: rem(375px);
   }
 
   &__Input {
+    width: 100%;
+    height: 100%;
+
     font-size: rem(12px);
     font-weight: 400;
     line-height: rem(14px);
     color: $color-black-default;
-    padding: rem(8px) rem(15px);
+
     @include iftablet {
       font-size: rem(24px);
       line-height: rem(29px);
@@ -99,8 +115,6 @@
   }
 
   &__Icon {
-    margin-left: 16px;
-    align-self: center;
     width: rem(14px);
     height: rem(14px);
 
@@ -114,6 +128,7 @@
 .SortButton {
   width: rem(56px);
   height: rem(37px);
+
   border-radius: 20px;
   border: rem(1px) solid $color-gray-default;
 
