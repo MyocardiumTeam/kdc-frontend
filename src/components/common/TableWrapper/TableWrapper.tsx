@@ -17,7 +17,7 @@ const TableWrapper = ({ children, title, searchValue, limit }: TableWrapperProps
         <h1 className={s.HeaderSection__Title}>{title}</h1>
         <div className={s.SearchArea}>
           <div className={s.SearchBarView}>
-            <Icon icon={'SEARCHICON'} viewBox="0 0 32 32" className={s.SearchBarView__Icon} />
+            <Icon icon={'MAGNIFIER'} viewBox="0 0 32 32" className={s.SearchBarView__Icon} />
             <input className={s.SearchBarView__Input} placeholder="Поиск" value={searchValue} />
           </div>
           <button className={s.SortButton}>

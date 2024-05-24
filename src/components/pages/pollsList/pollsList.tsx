@@ -18,7 +18,7 @@ const PollList = ({ id }: PollInfoProps) => {
       <h1 className={s.Home__Title}>Пациенты </h1>
       <div className={s.SearchArea}>
         <div className={s.SearchBarView}>
-          <Icon icon={'SEARCHICON'} viewBox="0 0 32 32" className={s.SearchIcon}></Icon>
+          <Icon icon={'MAGNIFIER'} viewBox="0 0 32 32" className={s.SearchIcon}></Icon>
           <input className={s.SearchBarInput} placeholder="Поиск"></input>
         </div>
         <div className={s.SortView}>
