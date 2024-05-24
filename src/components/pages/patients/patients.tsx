@@ -5,31 +5,28 @@ import clsx from 'clsx';
 import { useLazyGetPatientsQuery } from '../../../store/data-slices';
 import Link from 'next/link';
 import usePatientsData, { columnsName } from './common';
+import { TableWrapper } from '@common/index';
 
 const Patients = () => {
   const [trigger, { data }] = useLazyGetPatientsQuery();
 
-  const { patientsData, setPatientsData } = usePatientsData();
+  const { patientsData, setPatientsData } = usePatientsData(); //todo
 
   useEffect(() => {
     trigger(patientsData);
   }, []);
 
+  const [search, setSearch] = useState('');
+  const [limit, setLimit] = useState('12');
+
   return (
-    <div className={s.Home}>
-      <h1 className={s.Home__Title}>Пациенты </h1>
-      <div className={s.SearchArea}>
-        <div className={s.SearchBarView}>
-          <Icon icon={'SEARCHICON'} viewBox="0 0 32 32" className={s.SearchIcon}></Icon>
-          <input className={s.SearchBarInput} placeholder="Поиск"></input>
-        </div>
-        <div className={s.SortView}>
-          <h3 className={s.WidgetText}>Показывать</h3>
-          <button className={s.SortButton}>
-            <h5 className={s.SortButton__Text}>12</h5>
-          </button>
-        </div>
-      </div>
+    <TableWrapper
+      title="Пациенты"
+      searchValue={search}
+      onChangeSearchValue={setSearch}
+      limit={limit}
+      setLimit={setLimit}
+    >
       <ul className={clsx(s.Table, s.Table__TitleRow)}>
         {columnsName.map((column, index) => (
           <li key={index} className={s.Table__Element}>
@@ -89,7 +86,7 @@ const Patients = () => {
             </li>
           </ul>
         ))}
-    </div>
+    </TableWrapper>
   );
 };
 export default Patients;

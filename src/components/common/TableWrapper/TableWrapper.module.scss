@@ -1,0 +1,128 @@
+.Home {
+  width: rem(360px);
+  min-height: rem(618px);
+
+  background: $color-white-default;
+
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+
+  padding: rem(55px) 0;
+
+  @include iftablet {
+    width: rem(768px);
+    min-height: rem(741px);
+
+    padding: rem(60px) 0;
+  }
+  @include iflaptop {
+    width: rem(1000px);
+    min-height: rem(726px);
+
+    padding: rem(60px);
+
+    box-shadow:
+      0px 178px 71px rgba(0, 0, 0, 0.01),
+      0px 100px 60px rgba(0, 0, 0, 0.05),
+      0px 44px 44px rgba(0, 0, 0, 0.09),
+      0px 11px 24px rgba(0, 0, 0, 0.1);
+  }
+  @include ifdesktop {
+    min-height: rem(1239px);
+  }
+}
+
+.HeaderSection {
+  display: grid;
+  gap: rem(30px);
+
+  width: 100%;
+
+  padding: 0 rem(12px);
+
+  @include iftablet {
+    padding: 0 rem(24px);
+    gap: rem(45px);
+  }
+
+  @include iflaptop {
+    padding: 0;
+  }
+
+  &__Title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: rem(48px);
+    line-height: rem(58px);
+    color: $color-black-default;
+
+    align-self: flex-start;
+  }
+}
+
+.SearchArea {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+}
+
+.SearchBarView {
+  width: rem(175px);
+  height: rem(36px);
+  border-radius: rem(20px);
+  border: rem(1px) solid $color-gray-default;
+
+  display: flex;
+  flex-direction: row;
+  @include iftablet {
+    width: rem(375px);
+    height: rem(60px);
+  }
+  @include iflaptop {
+    width: rem(375px);
+  }
+
+  &__Input {
+    font-size: rem(12px);
+    font-weight: 400;
+    line-height: rem(14px);
+    color: $color-black-default;
+    padding: rem(8px) rem(15px);
+    @include iftablet {
+      font-size: rem(24px);
+      line-height: rem(29px);
+    }
+  }
+
+  &__Icon {
+    margin-left: 16px;
+    align-self: center;
+    width: rem(14px);
+    height: rem(14px);
+
+    @include iftablet {
+      width: rem(32px);
+      height: rem(32px);
+    }
+  }
+}
+
+.SortButton {
+  width: rem(56px);
+  height: rem(37px);
+  border-radius: 20px;
+  border: rem(1px) solid $color-gray-default;
+
+  @include iftablet {
+    width: rem(90px);
+    height: rem(60px);
+  }
+
+  &__Text {
+    color: $color-gray-default;
+  }
+}
