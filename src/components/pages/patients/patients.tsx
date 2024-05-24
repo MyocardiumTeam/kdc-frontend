@@ -1,6 +1,6 @@
 import { Icon } from '@base/index';
 import s from './patients.module.scss';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { useLazyGetPatientsQuery } from '../../../store/data-slices';
 import Link from 'next/link';
@@ -25,10 +25,11 @@ const Patients = () => {
         </div>
         <div className={s.SortView}>
           <h3 className={s.WidgetText}>Показывать</h3>
-          <button className={s.SortButton}></button>
+          <button className={s.SortButton}>
+            <h5 className={s.SortButton__Text}>12</h5>
+          </button>
         </div>
       </div>
-
       <ul className={clsx(s.Table, s.Table__TitleRow)}>
         {columnsName.map((column, index) => (
           <li key={index} className={s.Table__Element}>

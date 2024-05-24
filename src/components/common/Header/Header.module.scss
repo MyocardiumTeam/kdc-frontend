@@ -11,12 +11,16 @@
   border-bottom: rem(2px) solid rgba(0, 0, 0, 0.2);
 
   @include iftablet {
-    padding: rem(16px) rem(145px);
+    padding: rem(16px) rem(24px);
     flex-direction: row;
   }
 
   @include iflaptop {
     padding: rem(16px) rem(60px);
+    margin-bottom: rem(60px);
+  }
+  @include ifdesktop {
+    margin-bottom: rem(80px);
   }
 
   &__Logo {
@@ -31,6 +35,10 @@
 
     @include iflaptop {
       width: rem(497px);
+      height: rem(100px);
+    }
+    @include ifdesktop {
+      width: rem(556px);
     }
   }
   &__AccName {
@@ -40,7 +48,6 @@
     margin-left: auto;
   }
   &__ExitIcon {
-    position: absolute;
     margin-left: rem(243px);
     margin-top: rem(92px);
     align-self: center;

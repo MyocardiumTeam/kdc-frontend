@@ -13,8 +13,8 @@ const Header = () => {
         className={s.Header__Logo}
         src={'/images/Logo.png'}
         alt={'Logo'}
-        width={500}
-        height={500}
+        width={600}
+        height={600}
         fetchPriority="high"
         priority
       />
