@@ -38,9 +38,8 @@ const Patients = () => {
       </ul>
       {data &&
         data.map((patient, index) => (
-          <Link
-            href={`/poll-list/${patient.userId}`}
-            className={clsx(s.Table, {
+          <ul
+            className={clsx(s.Table, s.Table__ElementsTable, {
               [s.Table__PurpleCell]: index % 2 === 0,
               [s.Table__Element__Last]: index + 1 === data?.length,
             })}
@@ -66,7 +65,28 @@ const Patients = () => {
             <li key="floor" className={s.Table__Element}>
               <span style={{ color: 'black' }}>{patient.userGender}</span>
             </li>
-          </Link>
+
+            <li key="poll" className={s.Table__Element}>
+              <Link
+                href={`/type-poll/${patient.userId}`}
+                className={clsx(s.Table__Element)}
+                key={`${index}${patient.userId}`}
+                style={{ color: 'black' }}
+              >
+                Опросы
+              </Link>
+            </li>
+            <li key="Pill" className={s.Table__Element}>
+              <Link
+                href={`/type-poll/${patient.userId}`}
+                className={clsx(s.Table__Element)}
+                key={`${index}${patient.userId}`}
+                style={{ color: 'black' }}
+              >
+                Таблетки
+              </Link>
+            </li>
+          </ul>
         ))}
     </div>
   );

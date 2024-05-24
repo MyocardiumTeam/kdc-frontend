@@ -1,5 +1,5 @@
 .Home {
-  width: rem(1800px);
+  width: 90%;
   height: rem(810px);
 
   background: $color-white-default;
@@ -127,7 +127,7 @@
 
 .Table {
   display: grid;
-  grid-template-columns: 0.15fr 1fr 1fr 1fr;
+  grid-template-columns: 0.15fr 1fr 1fr 1fr 1fr;
   width: 100%;
 
   &__Element {
@@ -149,5 +149,9 @@
 
   &__PurpleCell {
     background-color: #decfff;
+  }
+
+  &__ElementsTable {
+    grid-template-columns: 0.15fr 1fr 1fr 1fr 0.5fr 0.5fr;
   }
 }
