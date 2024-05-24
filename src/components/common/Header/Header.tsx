@@ -3,6 +3,7 @@ import React from 'react';
 import s from './Header.module.scss';
 import Image from 'next/image';
 import { isAuthorized } from '../../../store/auth';
+import { Icon } from '@base/index';
 
 const Header = () => {
   console.log(isAuthorized());
@@ -17,6 +18,8 @@ const Header = () => {
         fetchPriority="high"
         priority
       />
+      <p className={s.Header__AccName}>Рафальский И.А.</p>
+      <Icon icon={'EXITICON'} className={s.Header__ExitIcon}></Icon>
     </header>
   );
 };
