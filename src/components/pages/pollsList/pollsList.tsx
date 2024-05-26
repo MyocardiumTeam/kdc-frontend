@@ -37,7 +37,7 @@ const PollList = ({ id }: PollInfoProps) => {
           <Link
             key={`${index}${operations[0].id}`}
             href={`/poll/${operations[0].id}`}
-            className={clsx(s.Table, {
+            className={clsx(s.Table, s.Table__WhiteCell, {
               [s.Table__PurpleCell]: index % 2 === 0,
               [s.Table__Element__Last]: index + 1 === data.report.length,
             })}

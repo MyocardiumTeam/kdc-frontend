@@ -20,8 +20,18 @@
     border-radius: 0 0 20px 20px;
   }
 
+  &__WhiteCell {
+    background-color: $color-white-default;
+    &:hover {
+      box-shadow: 0 0 5px $color-black-default;
+    }
+  }
+
   &__PurpleCell {
     background-color: #decfff;
+    &:hover {
+      box-shadow: 0 0 5px $color-black-default;
+    }
   }
 
   &__TitleRow {

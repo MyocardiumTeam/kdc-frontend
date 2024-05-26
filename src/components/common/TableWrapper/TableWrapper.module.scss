@@ -132,6 +132,10 @@
   border-radius: 20px;
   border: rem(1px) solid $color-gray-default;
 
+  &:hover {
+    box-shadow: 0 0 5px $color-gray-default;
+  }
+
   @include iftablet {
     width: rem(90px);
     height: rem(60px);

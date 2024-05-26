@@ -3,7 +3,6 @@ import React from 'react';
 import s from './Header.module.scss';
 import Image from 'next/image';
 import { isAuthorized } from '../../../store/auth';
-import { Icon } from '@base/index';
 
 const Header = () => {
   console.log(isAuthorized());
@@ -25,8 +24,8 @@ const Header = () => {
             className={s.Header__ExitIcon}
             src={'/images/Exit.png'}
             alt={'Logo'}
-            width={600}
-            height={600}
+            width={700}
+            height={700}
             fetchPriority="high"
             priority
           />
