@@ -43,9 +43,6 @@
 
   &__Element__Last {
     border-radius: 0 0 20px 20px;
-    @include iftablet {
-      border-radius: 0 0 20px 20px;
-    }
   }
 
   &__TitleRow {

@@ -1,9 +1,10 @@
 import { Icon } from '@base/index';
 import s from './poll.module.scss';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { useLazyGetPollInfoQuery } from '../../../store/data-slices';
 import { columnsName, PollInfoProps } from './common';
+import { TableWrapper } from '@common/index';
 
 const PollInfo = ({ id }: PollInfoProps) => {
   const [trigger, { data }] = useLazyGetPollInfoQuery();
@@ -11,21 +12,17 @@ const PollInfo = ({ id }: PollInfoProps) => {
   useEffect(() => {
     trigger(id);
   }, [id, trigger]);
+  const [search, setSearch] = useState('');
+  const [limit, setLimit] = useState('12');
 
   return (
-    <div className={s.Home}>
-      <h1 className={s.Home__Title}>Пациенты </h1>
-      <div className={s.SearchArea}>
-        <div className={s.SearchBarView}>
-          <Icon icon={'MAGNIFIER'} viewBox="0 0 32 32" className={s.SearchIcon}></Icon>
-          <input className={s.SearchBarInput} placeholder="Поиск"></input>
-        </div>
-        <div className={s.SortView}>
-          <h3 className={s.WidgetText}>Показывать</h3>
-          <button className={s.SortButton}></button>
-        </div>
-      </div>
-
+    <TableWrapper
+      title="Пациенты"
+      searchValue={search}
+      onChangeSearchValue={setSearch}
+      limit={limit}
+      setLimit={setLimit}
+    >
       <ul className={clsx(s.Table, s.Table__TitleRow)}>
         {columnsName.map((column, index) => (
           <li key={index} className={s.Table__Element}>
@@ -50,7 +47,7 @@ const PollInfo = ({ id }: PollInfoProps) => {
             </li>
           </ul>
         ))}
-    </div>
+    </TableWrapper>
   );
 };
 export default PollInfo;
