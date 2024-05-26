@@ -53,7 +53,7 @@ const Patients = () => {
           key={`${index}${patient.userId}`}
         >
           <li className={s.Table__Element}>
-            <span>9.8</span>
+            <span>{patient.userTotalScore}</span>
           </li>
           <li className={s.Table__Element}>
             <span>

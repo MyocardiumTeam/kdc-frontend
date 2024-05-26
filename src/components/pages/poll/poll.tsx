@@ -17,7 +17,7 @@ const PollInfo = ({ id }: PollInfoProps) => {
 
   return (
     <TableWrapper
-      title="Пациенты"
+      title="Ответы"
       searchValue={search}
       onChangeSearchValue={setSearch}
       limit={limit}

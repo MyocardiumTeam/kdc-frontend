@@ -1,140 +1,18 @@
-.Home {
-  width: rem(1800px);
-  height: rem(810px);
-
-  background: $color-white-default;
-  box-shadow:
-    0px 178px 71px rgba(0, 0, 0, 0.01),
-    0px 100px 60px rgba(0, 0, 0, 0.05),
-    0px 44px 44px rgba(0, 0, 0, 0.09),
-    0px 11px 24px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  display: flex;
-  align-items: center;
-
-  &__Title {
-    font-style: normal;
-    font-weight: 500;
-    font-size: rem(48px);
-    line-height: rem(58px);
-    color: $color-white-default;
-    margin-top: rem(60px);
-    margin-left: rem(70px);
-    align-self: flex-start;
-  }
-}
-
-.SearchArea {
-  width: rem(1680px);
-  height: rem(120px);
-  margin-top: rem(30px);
-  display: flex;
-  flex-direction: row;
-}
-
-.SearchBarView {
-  width: rem(561px);
-  height: rem(60px);
-  border-radius: rem(20px);
-  border: rem(1px) solid $color-gray-default;
-  margin-top: rem(30px);
-  margin-bottom: rem(30px);
-  display: flex;
-  flex-direction: row;
-}
-
-.SearchBarInput {
-  font-size: rem(24px);
-  font-weight: 400;
-  line-height: rem(29px);
-  color: $color-black-default;
-  padding: rem(8px) rem(15px);
-}
-
-.SortView {
-  width: rem(249px);
-  height: rem(60px);
-  margin-top: rem(30px);
-  margin-bottom: rem(30px);
-  margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.SortButton {
-  width: rem(90px);
-  height: rem(60px);
-  border-radius: 20px;
-  border: rem(1px) solid $color-gray-default;
-  margin-right: 0;
-}
-
-.WidgetText {
-  font-size: rem(24px);
-  font-weight: 400;
-  line-height: rem(29px);
-  font-style: normal;
-  color: $color-gray-default;
-}
-
-.SearchIcon {
-  margin-left: 16px;
-  align-self: center;
-}
-
-.FirstTableStroke {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: rem(1680px);
-  height: rem(60px);
-  background-color: $color-5gray-default;
-}
-
-.Column {
-  flex: 1;
-}
-
-.ColumnName {
-  margin-left: rem(32px);
-  color: $color-black-default;
-}
-
-.Separator {
-  width: 1px;
-  height: rem(60px);
-  background-color: black;
-}
-
-.SecondTableStroke {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: rem(1680px);
-  height: rem(60px);
-  background-color: $color-50purple-default;
-}
-
-.ThirdTableStroke {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: rem(1680px);
-  height: rem(60px);
-  background-color: $color-white-default;
-}
-
 .Table {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   width: 100%;
+  display: grid;
+  gap: rem(10px);
+  grid-template-columns: 1fr 1fr;
 
   &__Element {
-    border-right: 1px solid black;
-
-    &:last-child {
-      border: none;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: $color-black-default;
+    justify-content: space-between;
+    font-size: rem(12px);
+    @include iftablet {
+      font-size: rem(24px);
     }
   }
 
@@ -142,12 +20,15 @@
     border-radius: 0 0 20px 20px;
   }
 
-  &__TitleRow {
-    border-radius: 20px 20px 0 0;
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-
   &__PurpleCell {
     background-color: #decfff;
+  }
+
+  &__TitleRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 20px 20px 0 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
   }
 }

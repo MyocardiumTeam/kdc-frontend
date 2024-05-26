@@ -1,32 +1,30 @@
 import { Icon } from '@base/index';
 import s from './pollsList.module.scss';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import { useLazyGetPollsQuery } from '../../../store/data-slices';
 import Link from 'next/link';
 import { columnsName, PollInfoProps } from './common';
+import { TableWrapper } from '@common/index';
 
 const PollList = ({ id }: PollInfoProps) => {
   const [trigger, { data }] = useLazyGetPollsQuery();
+
+  const [search, setSearch] = useState('');
+  const [limit, setLimit] = useState('12');
 
   useEffect(() => {
     trigger(id);
   }, [id]);
 
   return (
-    <div className={s.Home}>
-      <h1 className={s.Home__Title}>Пациенты </h1>
-      <div className={s.SearchArea}>
-        <div className={s.SearchBarView}>
-          <Icon icon={'MAGNIFIER'} viewBox="0 0 32 32" className={s.SearchIcon}></Icon>
-          <input className={s.SearchBarInput} placeholder="Поиск"></input>
-        </div>
-        <div className={s.SortView}>
-          <h3 className={s.WidgetText}>Показывать</h3>
-          <button className={s.SortButton}></button>
-        </div>
-      </div>
-
+    <TableWrapper
+      title="Опросы"
+      searchValue={search}
+      onChangeSearchValue={setSearch}
+      limit={limit}
+      setLimit={setLimit}
+    >
       <ul className={clsx(s.Table, s.Table__TitleRow)}>
         {columnsName.map((column, index) => (
           <li key={index} className={s.Table__Element}>
@@ -34,7 +32,6 @@ const PollList = ({ id }: PollInfoProps) => {
           </li>
         ))}
       </ul>
-
       {data &&
         data.report.map(({ operations, survey_name }, index) => (
           <Link
@@ -47,13 +44,20 @@ const PollList = ({ id }: PollInfoProps) => {
           >
             <li key="id" className={clsx(s.Table__Element)}>
               <a style={{ color: 'black' }}>{survey_name}</a>
-            </li>
+            </li>{' '}
             <li key="floor" className={s.Table__Element}>
-              <span style={{ color: 'black' }}>{operations[0].timestamp}</span>
+              <span style={{ color: 'black' }}>{`${new Date(operations[0].timestamp).toLocaleString(
+                'default',
+                {
+                  day: 'numeric',
+                  month: 'long',
+                  year: 'numeric',
+                },
+              )}`}</span>
             </li>
           </Link>
         ))}
-    </div>
+    </TableWrapper>
   );
 };
 export default PollList;
