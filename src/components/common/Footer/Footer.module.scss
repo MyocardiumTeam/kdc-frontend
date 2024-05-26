@@ -8,6 +8,12 @@
   @include iftablet {
     padding-left: rem(60px);
   }
+  @include iflaptop {
+    margin-top: rem(60px);
+  }
+  @include ifdesktop {
+    margin-top: rem(80px);
+  }
   &__Note {
     color: rgba(0, 0, 0, 0.5);
     font-size: rem(24px);

@@ -12,11 +12,13 @@
 
   @include iftablet {
     padding: rem(16px) rem(24px);
+
     flex-direction: row;
   }
 
   @include iflaptop {
     padding: rem(16px) rem(60px);
+
     margin-bottom: rem(60px);
   }
   @include ifdesktop {
@@ -42,19 +44,37 @@
     }
   }
   &__AccName {
-    margin-top: rem(25px);
     color: $color-black-default;
-    align-self: center;
-    margin-left: auto;
+    margin-left: rem(65px);
+    @include iftablet {
+      align-self: center;
+    }
   }
   &__ExitIcon {
-    margin-left: rem(243px);
-    margin-top: rem(92px);
+    width: rem(15px);
+    height: rem(18.67px);
+
+    margin-left: rem(15px);
+
     align-self: center;
+    @include iftablet {
+      width: rem(22.5px);
+      height: rem(28px);
+    }
   }
   &__AccView {
     display: flex;
-    flex-direction: row;
     align-items: center;
+    @include iftablet {
+      display: flex;
+      align-items: center;
+      margin-right: rem(10px);
+    }
+    @include iflaptop {
+      margin-right: rem(20px);
+    }
+    @include ifdesktop {
+      margin-right: rem(100px);
+    }
   }
 }

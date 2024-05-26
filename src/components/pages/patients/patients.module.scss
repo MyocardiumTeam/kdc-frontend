@@ -1,19 +1,101 @@
 .Table {
-  display: grid;
-  grid-template-columns: 0.15fr 1.5fr 1fr 0.6fr 1fr;
-
   width: 100%;
+  display: grid;
+  gap: rem(10px);
+  grid-template-columns: 0.8fr 1.55fr 1.3fr 1fr;
+
+  @include iftablet {
+    grid-template-columns: 0.6fr 1.21fr 0.92fr 0.5fr;
+  }
+  @include iflaptop {
+    grid-template-columns: 0.6fr 1.2fr 0.92fr 0.7fr 0.95fr;
+  }
+  @include ifdesktop {
+    grid-template-columns: 0.6fr 1.2fr 0.9fr 0.7fr 0.95fr;
+  }
+
+  &__Element {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: $color-black-default;
+    justify-content: space-between;
+    font-size: rem(12px);
+    @include iftablet {
+      font-size: rem(24px);
+    }
+
+    &__Gender {
+      display: none;
+      @include iflaptop {
+        display: flex;
+        font-size: rem(24px);
+        align-items: center;
+        padding: 10px;
+        color: $color-black-default;
+        justify-content: space-between;
+      }
+    }
+    &__BirthDay {
+      white-space: nowrap;
+    }
+  }
 
   &__Element__Last {
     border-radius: 0 0 20px 20px;
+    @include iftablet {
+      border-radius: 0 0 20px 20px;
+    }
   }
 
   &__TitleRow {
+    display: grid;
+    grid-template-columns: 0.63fr 1.2fr 1.15fr 0.73fr;
     border-radius: 20px 20px 0 0;
     background-color: rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    @include iftablet {
+      grid-template-columns: 0.63fr 1.2fr 1.15fr 0.92fr;
+    }
+    @include iflaptop {
+      grid-template-columns: 0.63fr 1.2fr 1.15fr 0.72fr 0.95fr;
+    }
+  }
+
+  &__PillPollIcons {
+    width: rem(18px);
+    height: rem(18px);
+
+    @include iftablet {
+      width: rem(36px);
+      height: rem(36px);
+      margin-right: rem(30px);
+    }
+  }
+  &__NotificationIcons {
+    width: rem(16px);
+    height: rem(16px);
+    @include iftablet {
+      width: rem(32px);
+      height: rem(32px);
+    }
   }
 
   &__PurpleCell {
     background-color: #decfff;
+  }
+
+  &__ColumnsStyle {
+    color: $color-black-default;
+  }
+
+  &__Link {
+    margin-right: rem(10px);
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -18,8 +18,20 @@ const Header = () => {
         fetchPriority="high"
         priority
       />
-      <p className={s.Header__AccName}>Рафальский И.А.</p>
-      <Icon icon={'EXITICON'} className={s.Header__ExitIcon}></Icon>
+      <div className={s.Header__AccView}>
+        <p className={s.Header__AccName}>Рафальский И.А.</p>
+        <button>
+          <Image
+            className={s.Header__ExitIcon}
+            src={'/images/Exit.png'}
+            alt={'Logo'}
+            width={600}
+            height={600}
+            fetchPriority="high"
+            priority
+          />
+        </button>
+      </div>
     </header>
   );
 };

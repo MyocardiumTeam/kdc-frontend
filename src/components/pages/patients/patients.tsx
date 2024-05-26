@@ -5,6 +5,7 @@ import { useLazyGetPatientsQuery } from '../../../store/data-slices';
 import Link from 'next/link';
 import usePatientsData, { columnsName } from './common';
 import { TableWrapper } from '@common/index';
+import Image from 'next/image';
 
 const Patients = () => {
   const [trigger, { data }] = useLazyGetPatientsQuery();
@@ -27,11 +28,21 @@ const Patients = () => {
       setLimit={setLimit}
     >
       <ul className={clsx(s.Table, s.Table__TitleRow)}>
-        {columnsName.map((column, index) => (
-          <li key={index} className={s.Table__Element}>
-            <span style={{ color: 'black' }}>{column}</span>
-          </li>
-        ))}
+        <li className={s.Table__Element}>
+          <span className={s.Table__ColumnsStyle}>Баллы</span>
+        </li>
+        <li className={s.Table__Element}>
+          <span className={s.Table__ColumnsStyle}>Пациент</span>
+        </li>
+        <li className={s.Table__Element}>
+          <span className={s.Table__ColumnsStyle}>Дата рождения</span>
+        </li>
+        <li className={clsx(s.Table__Element, s.Table__Element__Gender)}>
+          <span className={s.Table__ColumnsStyle}>Пол</span>
+        </li>
+        <li className={s.Table__Element}>
+          <span className={s.Table__ColumnsStyle}>Сведения</span>
+        </li>
       </ul>
       {data?.map((patient, index) => (
         <ul
@@ -47,10 +58,18 @@ const Patients = () => {
           <li className={s.Table__Element}>
             <span>
               {patient.firstName} {patient.lastName} {patient.patronymic}
-              <button title="a" />
             </span>
+            <button>
+              <Image
+                className={s.Table__NotificationIcons}
+                src={'/images/Notification.png'}
+                alt={'Notification'}
+                width={100}
+                height={100}
+              />
+            </button>
           </li>
-          <li className={s.Table__Element}>
+          <li className={clsx(s.Table__Element__BirthDay, s.Table__Element)}>
             <span>
               {new Date(patient.userBirthDate).toLocaleString('default', {
                 day: 'numeric',
@@ -59,7 +78,7 @@ const Patients = () => {
               })}
             </span>
           </li>
-          <li className={s.Table__Element}>
+          <li className={s.Table__Element__Gender}>
             <span>{patient.userGender}</span>
           </li>
 
@@ -69,14 +88,26 @@ const Patients = () => {
               className={clsx(s.Table__Element)}
               key={`${index}${patient.userId}`}
             >
-              Опросы
+              <Image
+                className={s.Table__PillPollIcons}
+                src={'/images/Polls.png'}
+                alt={'Polls'}
+                width={100}
+                height={100}
+              />
             </Link>
             <Link
               href={`/type-poll/${patient.userId}`}
               className={clsx(s.Table__Element)}
               key={`${index}${patient.userId}`}
             >
-              Таблетки
+              <Image
+                className={s.Table__PillPollIcons}
+                src={'/images/Pills.png'}
+                alt={'Pills'}
+                width={100}
+                height={100}
+              />
             </Link>
           </li>
         </ul>
