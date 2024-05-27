@@ -51,6 +51,7 @@ export interface User {
   userPhone: string;
   userRole: string;
   userSnils: string;
+  userTotalScore: string;
 }
 
 interface SurveyAnswer {

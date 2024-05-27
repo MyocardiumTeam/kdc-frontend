@@ -19,14 +19,12 @@ const Patients = () => {
   const [search, setSearch] = useState('');
   const [limit, setLimit] = useState('12');
 
-  const [notificationStates, setNotificationStates] = useState({});
-
-  const handleButtonClick = (userId) => {
-    setNotificationStates((prevStates) => ({
-      ...prevStates,
-      [userId]: !prevStates[userId],
-    }));
-  };
+  // const handleButtonClick = (userId) => {
+  //   setNotificationStates((prevStates) => ({
+  //     ...prevStates,
+  //     [userId]: !prevStates[userId],
+  //   }));
+  // };
 
   return (
     <TableWrapper
@@ -68,15 +66,11 @@ const Patients = () => {
             <span>
               {patient.firstName} {patient.lastName} {patient.patronymic}
             </span>
-            <button onClick={() => handleButtonClick(patient.userId)}>
+            <button onClick={() => {}}>
               <Image
                 className={s.Table__NotificationIcons}
-                src={
-                  notificationStates[patient.userId]
-                    ? '/images/NotificationClosed.png'
-                    : '/images/Notification.png'
-                }
-                alt={notificationStates[patient.userId] ? 'Notification Closed' : 'Notification'}
+                src={'/images/Notification.png'}
+                alt={'isNotification'}
                 width={100}
                 height={100}
               />
