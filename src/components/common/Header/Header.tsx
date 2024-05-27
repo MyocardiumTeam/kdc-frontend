@@ -1,11 +1,27 @@
+'use client';
 import React from 'react';
 
 import s from './Header.module.scss';
 import Image from 'next/image';
-import { isAuthorized } from '../../../store/auth';
+import { authSlice } from '../../../store/auth';
+import { useDispatch } from 'react-redux';
+import { AppDispatch } from '../../../store/store';
+import { useRouter } from 'next/router';
+import { RouteEnum } from '@constants/route';
 
 const Header = () => {
-  console.log(isAuthorized());
+  const { logout } = authSlice.actions;
+  const useAppDispatch = () => useDispatch<AppDispatch>();
+
+  const dispatch = useAppDispatch();
+
+  const { push } = useRouter();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    push(RouteEnum.HOME);
+  };
+
   return (
     <header className={s.Header}>
       <Image
@@ -19,7 +35,7 @@ const Header = () => {
       />
       <div className={s.Header__AccView}>
         <p className={s.Header__AccName}>Рафальский И.А.</p>
-        <button>
+        <button type="button" onClick={handleLogout}>
           <Image
             className={s.Header__ExitIcon}
             src={'/images/Exit.png'}

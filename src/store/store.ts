@@ -1,5 +1,4 @@
 import { configureStore, createListenerMiddleware } from '@reduxjs/toolkit';
-import { createWrapper } from 'next-redux-wrapper';
 import { apiSlice } from './api';
 import { authSlice } from './auth';
 
@@ -18,5 +17,6 @@ export const setupStore = () => {
 };
 export const store = setupStore();
 
+export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
 export type AppStore = ReturnType<typeof setupStore>;
