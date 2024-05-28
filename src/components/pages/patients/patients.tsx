@@ -14,6 +14,7 @@ const Patients = () => {
 
   useEffect(() => {
     trigger(patientsData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [search, setSearch] = useState('');

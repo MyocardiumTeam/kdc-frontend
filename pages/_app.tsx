@@ -19,6 +19,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     } else {
       push(RouteEnum.HOME);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

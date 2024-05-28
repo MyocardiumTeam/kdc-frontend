@@ -34,6 +34,7 @@ const Login = () => {
     if (isSuccess) {
       push('/patients');
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isSuccess]);
 
   const handleSignIn = async (data: SignInType) => {

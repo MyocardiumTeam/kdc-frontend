@@ -15,6 +15,7 @@ const PollList = ({ id }: PollInfoProps) => {
 
   useEffect(() => {
     trigger(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
