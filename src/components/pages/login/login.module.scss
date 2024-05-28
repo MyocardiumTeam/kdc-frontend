@@ -30,6 +30,8 @@
     line-height: rem(38px);
     color: $color-black-default;
 
+    text-align: center;
+
     margin-top: rem(79px);
 
     @include iftablet {
@@ -85,8 +87,50 @@
 
     background: rgba(217, 217, 217, 0.01);
 
+    padding-left: rem(7px);
+
     border: rem(2px) solid #d9d9d9;
     border-radius: rem(10px);
+
+    font-size: rem(20px);
+    line-height: rem(24px);
+    color: rgba(0, 0, 0, 0.8);
+
+    &:hover {
+      box-shadow: 0 0 5px $color-gray-default;
+    }
+
+    @include iftablet {
+      width: rem(425px);
+      height: rem(45.61px);
+
+      padding: rem(12px) rem(16px);
+      margin-bottom: rem(11px);
+    }
+    @include iflaptop {
+      width: rem(410px);
+      height: rem(44px);
+
+      padding: rem(12px) rem(12px);
+      margin-bottom: rem(10px);
+    }
+    @include ifdesktop {
+      width: rem(400px);
+      height: rem(42.93px);
+
+      margin-bottom: rem(8.8px);
+    }
+  }
+
+  &__InputPass {
+    box-sizing: border-box;
+
+    width: rem(295px);
+    height: rem(44px);
+
+    background: rgba(217, 217, 217, 0.01);
+
+    padding-left: rem(7px);
 
     font-size: rem(20px);
     line-height: rem(24px);
@@ -114,6 +158,45 @@
     }
   }
 
+  &__SecurityImage {
+    width: rem(32px);
+    height: rem(32px);
+
+    margin-right: rem(5px);
+  }
+
+  &__PasswordView {
+    width: rem(295px);
+    height: rem(44px);
+
+    border: rem(2px) solid #d9d9d9;
+    border-radius: rem(10px);
+
+    padding-top: rem(7px);
+
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    gap: rem(9px);
+
+    &:hover {
+      box-shadow: 0 0 5px $color-gray-default;
+    }
+
+    @include iftablet {
+      width: rem(425px);
+      height: rem(45.61px);
+    }
+    @include iflaptop {
+      width: rem(410px);
+      height: rem(44px);
+    }
+    @include ifdesktop {
+      width: rem(400px);
+      height: rem(42.93px);
+    }
+  }
+
   &__Button {
     width: rem(295px);
     height: rem(65px);
@@ -124,6 +207,10 @@
     background: #6928df;
 
     border-radius: rem(10px);
+
+    &:hover {
+      box-shadow: 0 0 5px $color-black-default;
+    }
 
     @include iftablet {
       width: rem(425px);

@@ -4,7 +4,8 @@ import { useForm } from 'react-hook-form';
 import { defaultValues, SignInType, validationSchema } from './common';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAuthUserMutation } from '../../../store/rtkAuth';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 const Login = () => {
   const {
@@ -18,6 +19,12 @@ const Login = () => {
     resolver: zodResolver(validationSchema),
     defaultValues,
   });
+
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+
+  const handlePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
 
   const [userAuth, { isSuccess }] = useAuthUserMutation();
 
@@ -46,9 +53,27 @@ const Login = () => {
 
       <form onSubmit={handleSubmit(handleSignIn)} className={s.Form}>
         <p className={s.Form__TitleInput}>Снилс</p>
-        <input {...register('snils')} className={s.Form__Input} />
+        <input {...register('snils')} className={s.Form__Input} placeholder="111-111-111-11" />
         <p className={s.Form__TitleInput}>Пароль</p>
-        <input {...register('userPassword')} className={s.Form__Input} />
+        <div className={s.Form__PasswordView}>
+          <input
+            {...register('userPassword')}
+            className={s.Form__InputPass}
+            type={isPasswordVisible ? 'text' : 'password'}
+            placeholder="*********"
+          />
+          <button type="button" onClick={handlePasswordVisibility}>
+            <Image
+              className={s.Form__SecurityImage}
+              src={isPasswordVisible ? '/images/Security.png' : '/images/SecurityClosed.png'}
+              alt={isPasswordVisible ? 'Security' : 'Security Closed'}
+              width={700}
+              height={700}
+              fetchPriority="high"
+              priority
+            />
+          </button>
+        </div>
         <button className={s.Form__Button}>Вход</button>
       </form>
     </main>
